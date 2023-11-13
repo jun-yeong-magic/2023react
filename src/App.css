@@ -22,6 +22,10 @@ li {list-style: none;}
   width: 300px;
   height: 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .myP {
@@ -29,3 +33,45 @@ li {list-style: none;}
   background-color: skyblue;
 }
 
+.tab > ul {display: flex;}
+.tab > ul > li {
+  padding: 10px; cursor: pointer; border-radius: 5px, 5px, 0 0; 
+  border: 1px solid #000;
+  border-right: 0 none;
+}
+.tab > ul > li:last-child {
+  border-right: 0;
+}
+
+.tab > ul > li.active {background: skyblue;}
+
+.swiper {
+  width: 100%;
+  height: 500px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  background-color: gainsboro;
+}
+
+.list > li {
+  padding: 10px 0;
+  cursor: pointer;
+}
+.list > li:hover {
+  background: skyblue;
+}
+
+.btnWrap {
+  display: flex;
+  justify-content: end;
+}
