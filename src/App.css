@@ -23,3 +23,9 @@ li {list-style: none;}
   height: 300px;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
+
+.myP {
+  color: #f00;
+  background-color: skyblue;
+}
+
