@@ -63,11 +63,11 @@ li {list-style: none;}
   background-color: gainsboro;
 }
 
-.list > li {
+.lists > li {
   padding: 10px 0;
   cursor: pointer;
 }
-.list > li:hover {
+.lists > li:hover {
   background: skyblue;
 }
 
@@ -75,3 +75,21 @@ li {list-style: none;}
   display: flex;
   justify-content: end;
 }
+.btnWrap button {
+  padding: 5px 15px;
+}
+
+
+.num {
+  background-color: rgb(135, green, blue);
+  display: inline-block;
+  padding: 10px;
+}
+
+.avata {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avata img {width: 100%;}

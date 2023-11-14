@@ -1,67 +1,48 @@
 import { useState } from 'react';
 import './App.css'
+import { vData, vData1 } from './data.js'
+
 
 function App() {
-  const [num, setNum] = useState(0)
-  const [data, setData] = useState([
-    "1. Lorem ipsum dolor sit amet.",
-    "2. Asperiores sequi laudantium non praesentium?",
-    "3. Ipsum iure pariatur laborum explicabo.",
-  ])
-  const [VModal, setVModal] = useState(true)
-
-  const openList = (i) => {
-    setNum(i)
-    setVModal(true)
-  }
-
-  const handleClose = () => {
-    setVModal(false)
-  }
-
+  const [viewData, setViewData] = useState(vData)
+  const [viewData1, setViewData1] = useState(vData1)
   return (
-    <div className='App'>
-      {num}
-      <ul className="lists">
-        {
-          data.map(function (item, i) {
-            return (
-              <>
-                <li onClick={() => { openList(i) }}>{item}</li>
-              </>
-            )
-          })
-        }
-      </ul>
-      <button onClick={() => { setVModal(!VModal) }}>보기/안보기</button>
-
+    <div className="App">
       {
-        VModal == true ? <Modal rData={data} rNum={num} onClose={handleClose} /> : null
-      }
-      
-    </div>
-  )
-}
+        viewData.map(function (item) {
+          return (
+            <>
+              <div style={{ display: "flex" }}>
+                <div>{item.id}</div>
+                <div>{item.title}</div>
+                <div>{item.content}</div>
+                <div className='avata'>
+                  <img src={`./img/${item.img}`} alt="" />
+                </div>
+              </div>
 
-// function Modal(props) {
-//   return (
-//     <div className='modal'>
-//       <h3>안녕하세요</h3>
-//       <p>{props.rData[props.rNum]}</p>
-//       <div className='btnWrap'>
-//         <button>닫기</button>
-//       </div>
-//     </div>
-//   )
-// }
-function Modal({ rData, rNum, onClose }) {
-  return (
-    <div className='modal'>
-      <h3>안녕하세요</h3>
-      <p>{rData[rNum]}</p>
-      <div className='btnWrap'>
-        <button onClick={onClose}>닫기</button>
-      </div>
+            </>
+          )
+        })
+      }
+      <hr />
+      {
+        viewData1.map(function (item) {
+          return (
+            <>
+              <div style={{ display: "flex" }}>
+                <div>{item.id}</div>
+                <div>{item.title}</div>
+                <div>{item.content}</div>
+                <div className='avata'>
+                  <img src={`./img/${item.img}`} alt="" />
+                </div>
+              </div>
+
+            </>
+          )
+        })
+      }
     </div>
   )
 }
