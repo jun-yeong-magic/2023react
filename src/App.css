@@ -1,12 +1,13 @@
-* { 
+*{
   margin: 0; padding: 0;
   box-sizing: border-box;
 }
-li {list-style: none;}
+
+li{list-style: none;}
 
 .flex{
   display: flex;
-  /* border: 1px solid #000; */
+  /* border: 3px solid #000; */
   justify-content: space-between;
   padding: 0 10px;
 }
@@ -16,80 +17,129 @@ li {list-style: none;}
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
+  background: #ffffff;
   padding: 20px;
   border-radius: 10px;
   width: 300px;
   height: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; 
 }
 
-.myP {
+.myP{
   color: #f00;
   background-color: skyblue;
 }
 
-.tab > ul {display: flex;}
-.tab > ul > li {
-  padding: 10px; cursor: pointer; border-radius: 5px, 5px, 0 0; 
+.tab > ul{display: flex;}
+.tab > ul > li{padding: 10px; cursor: pointer; border-radius: 5px 5px 0 0 ; 
   border: 1px solid #000;
   border-right: 0 none;
 }
-.tab > ul > li:last-child {
-  border-right: 0;
+.tab > ul > li:last-child{
+  border-right: 1px solid #000;
 }
-
-.tab > ul > li.active {background: skyblue;}
+.tab > ul > li.active{background: skyblue; border-bottom: 0 none;}
 
 .swiper {
   width: 100%;
   height: 500px;
 }
-
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   background: #fff;
 
   /* Center slide text vertically */
-  display: flex !important;
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  background-color: gainsboro;
+  height: 100;
+  background-color: skyblue;
 }
 
-.lists > li {
+.lists > li{
   padding: 10px 0;
   cursor: pointer;
 }
-.lists > li:hover {
+
+.lists > li:hover{
   background: skyblue;
 }
 
-.btnWrap {
+.btnWrap{
   display: flex;
   justify-content: end;
 }
-.btnWrap button {
+
+.btnWrap button{
   padding: 5px 15px;
 }
 
-
-.num {
-  background-color: rgb(135, green, blue);
+.num{
+  background-color: rgb(121, 143, 151);
   display: inline-block;
   padding: 10px;
 }
 
-.avata {
+.avata{
   width: 100px;
   height: 100px;
   border-radius: 50%;
   overflow: hidden;
 }
-.avata img {width: 100%;}
+
+.avata img{width: 100%;}
+
+/* 1115 */
+.visualWrap{
+  background: gray;
+}
+.contentWrap01{
+  background: papayawhip;
+}
+.dot{
+  position: relative;
+}
+
+.dot::after{
+  content:'';
+  width: 10px;
+  height: 10px;
+  display: block;
+  background-color: #ff0000;
+  margin: 10px auto;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-700%);
+}
+
+/* 1116 */
+.card{
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  transition: 0.3s; /* 속도 */ 
+}
+
+.card:hover{
+  transform: translate(-10px, -10px);
+  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.3);
+  /* 호버했을때 그림자 호버전 card에서는 0px로 */
+  cursor: pointer;
+}
+
+.icon{
+  width: 70px;
+  height: 70px;
+  background: skyblue;
+  border-radius: 50%;
+  
+  /* 원 안에 가운데로 오도록하려면 밑에 3개 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

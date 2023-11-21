@@ -1,48 +1,31 @@
 import { useState } from 'react';
 import './App.css'
-import { vData, vData1 } from './data.js'
+import './view.scss'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
-  const [viewData, setViewData] = useState(vData)
-  const [viewData1, setViewData1] = useState(vData1)
+  const [isActive, setIsActive] = useState(false)
+  function boxView() {
+    // alert("test")
+    setIsActive(!isActive)
+
+  }
   return (
     <div className="App">
-      {
-        viewData.map(function (item) {
-          return (
-            <>
-              <div style={{ display: "flex" }}>
-                <div>{item.id}</div>
-                <div>{item.title}</div>
-                <div>{item.content}</div>
-                <div className='avata'>
-                  <img src={`./img/${item.img}`} alt="" />
-                </div>
-              </div>
 
-            </>
-          )
-        })
-      }
-      <hr />
-      {
-        viewData1.map(function (item) {
-          return (
-            <>
-              <div style={{ display: "flex" }}>
-                <div>{item.id}</div>
-                <div>{item.title}</div>
-                <div>{item.content}</div>
-                <div className='avata'>
-                  <img src={`./img/${item.img}`} alt="" />
-                </div>
-              </div>
+      <div className={`boxWrap ${isActive ? "active" : ''}`} onClick={boxView}>
+        <div className='bar start'></div>
+        <div className='bar middle'></div>
+        <div className='bar end'></div>
+      </div>
 
-            </>
-          )
-        })
-      }
+      <div className={`bgWrap ${isActive ? 'view' : ''}`} onClick={boxView}>
+        <div className='box'>
+          <h3>view</h3>
+        </div>
+      </div>
+
     </div>
   )
 }
